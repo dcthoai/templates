@@ -1,0 +1,661 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap');
+
+@font-face {
+    font-family: 'Brittany';
+    src: url('../fonts/BrittanySignature.ttf') format('truetype');
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    position: relative;
+    max-width: 100%;
+    overflow-x: hidden;
+    font-family: 'Montserrat';
+}
+
+.background {
+    background-image: url(../imgs/background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.container {
+    width: 900px;
+    max-width: 100%;
+    overflow-x: hidden;
+    margin: 0 auto;
+}
+
+button {
+    transition: all linear 0.3s;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+header nav {
+    width: 100vw;
+    height: 56px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+}
+
+header nav .nav-box {
+    display: block;
+    width: 900px;
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: end;
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+}
+
+header .nav-box button {
+    margin-right: 10px;
+    border: none;
+}
+
+header .nav-box button:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+header .nav-box a {
+    text-decoration: none;
+    margin-right: 16px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1d5703;
+}
+
+header .title {
+    margin-top: 80px;
+}
+
+header .title .row > * {
+    width: fit-content !important;
+    height: fit-content;
+    font-size: 20px;
+}
+
+header .title .first-text {
+    height: 160px;
+    line-height: 140px;
+    font-size: 28px;
+}
+
+header .title .second-text {
+    height: 180px;
+    display: flex;
+    align-items: end;
+    padding: 0;
+    font-size: 28px;
+}
+
+header .title .number {
+    color: #1d5703;
+    font-size: 96px;
+    font-weight: 400;
+    width: fit-content;
+    line-height: 100px;
+}
+
+header .title .number .day {
+    border-bottom: 1px solid #ccc;
+}
+
+header .frontground {
+    max-width: 100%;
+    aspect-ratio: 4/3;
+    margin: 0 auto;
+    position: relative;
+}
+
+header .frontground img {
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    object-fit: cover;
+}
+
+header .frontground .wedding-title {
+    position: absolute;
+    top: calc(100% - 48px);
+    left: 42px;
+    font-size: 140px;
+    line-height: 100px;
+    font-family: 'Brittany';
+    font-weight: 400;
+    transform: rotate(-3deg);
+    z-index: 10;
+}
+
+header .frontground .wedding-member {
+    position: absolute;
+    top: calc(100% + 108px);
+    left: 64px;
+    font-size: 22px;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+main .calendar-title {
+    font-size: 52px;
+    font-style: italic;
+    font-weight: 500;
+    font-family: "Alex Brush", cursive;
+    width: 100%;
+    text-align: center;
+    margin-top: 260px;
+    margin-bottom: 32px;
+}
+
+main .countdown {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+main .countdown .time {
+    text-align: center;
+    width: 25%;
+    min-width: 60px;
+    max-width: 160px;
+    color: #2E7D32;
+}
+
+main .countdown .time span {
+    font-size: 48px;
+    font-weight: 500;
+}
+
+main .countdown .label {
+    margin-top: 5px;
+    font-size: 16px;
+}
+
+main .event .event-item {
+    background-color: #eaefee;
+    border-radius: 8px;
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: calc(50% - 24px);
+    margin: 0 12px;
+    box-shadow: 0 0 16px 2px #fcfffb74;
+}
+
+main .event .event-item img {
+    display: block;
+    width: 400px;
+    max-width: 65%;
+    margin: 0 auto;
+    aspect-ratio: 9/14;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+main .event .event-item .title {
+    margin: 16px 0 32px;
+    font-size: 20px;
+    font-weight: 400;
+    position: relative;
+}
+
+main .event .event-item .title::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: calc(100% + 6px);
+    width: 120px;
+    height: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 6px;
+    background-color: #1d5703;
+}
+
+main .event .event-item .date {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 16px;
+    margin: 20px 0 10px;
+    color: #000;
+}
+
+main .event .event-item .place {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 500;
+    max-width: 75%;
+    width: 400px;
+    margin: 0 auto;
+}
+
+main .event .heading,
+main .wish-box .wish-box__title, 
+main .celebration-box .heading {
+    font-family: 'Alex Brush';
+    font-size: 54px;
+    font-weight: 500;
+    line-height: 1;
+    width: 320px;
+    min-width: 100%;
+    margin: 32px auto;
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 24px;
+}
+
+main .celebration-box .row {
+    margin: 0 auto;
+}
+
+main .celebration-box .qr-code {
+    border: 2px dotted #2E7D32;
+    border-radius: 12px;
+    padding: 0 56px;
+}
+
+main .celebration-box .qr-code .qr-code__name {
+    padding: 36px 0;
+}
+
+main .celebration-box .qr-code img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    padding: 16px;
+    background-color: #fff;
+    box-shadow: 0 1px 5px 2px #eee;
+    margin-bottom: 32px;
+}
+
+main .wish-box {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+main .wish-box .wrapper {
+    width: 100%;
+    position: relative;
+    border: 2px solid #2E7D32;
+    background-color: transparent;
+}
+
+main .wish-box .background {
+    position: absolute;
+    top: -15px;
+    left: 10px;
+    width: calc(100% - 20px);
+    height: calc(100% + 30px);
+    z-index: -1;
+    border: 2px solid #2E7D32;
+}
+
+main .wish-box input,
+main .wish-box textarea {
+    background-color: #eaefee;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    outline: none;
+    width: 100%;
+    box-shadow: 0 0 1px 1px #cecece;
+}
+
+main .confirm-box button,
+main .wish-box button {
+    background-color: #6d975a;
+    padding: 6px 36px;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 500;
+    border: none;
+    border-radius: 8px;
+}
+
+main .wish-box .wish-content {
+    width: 768px;
+    max-width: 80%;
+    margin: 0 auto;
+    background-color: #fff;
+    max-height: 400px;
+    overflow-y: scroll;
+}
+
+main .wish-box .wish-content .wish-item {
+    border-bottom: 2px dotted #888;
+    font-size: 14px;
+    font-weight: 300px;
+    padding: 8px 0;
+}
+
+main .wish-box .wish-content .wish-item .name {
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+main .confirm-box input {
+    background-color: #eaefee;
+    border: none;
+    border-radius: 8px;
+    padding: 16px;
+    outline: none;
+    width: 100%;
+}
+
+main .confirm-box .event-box {
+    background-color: #eaefee;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    width: 100%;
+    padding: 16px;
+}
+
+main .confirm-box .event-box .heading {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+main .album img {
+    width: 100%;
+    vertical-align: middle;
+    object-fit: cover;
+}
+
+main .album .album-head {
+    padding: 0;
+}
+
+main .album .album-head h4 {
+    padding: 8px 8px 0 40%;
+    text-align: end;
+    font-family: 'Alex Brush';
+    font-size: 64px;
+    font-weight: 400;
+}
+
+main .album .album-head img {
+    border-radius: 8px;
+    aspect-ratio: 4/3;
+    vertical-align: middle;
+    object-fit: cover;
+}
+
+main .album .album-item img {
+    aspect-ratio: 2/3;
+    border-radius: 8px;
+    vertical-align: middle;
+    object-fit: cover;
+}
+
+main .wish-box .wish-box__title {
+    margin-bottom: 36px;
+}
+
+footer .thankyou {
+    margin-top: 250px;
+    font-size: 180px;
+    transform: rotate(-2deg);
+    font-family: 'Brittany';
+    font-weight: 500;
+    line-height: 1.2;
+    text-align: center;
+}
+
+footer .wrapper {
+    text-align: end;
+    width: 580px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-top: 100px;
+    padding: 16px;
+}
+
+footer .wrapper .title {
+    font-style: italic;
+    font-size: 18px;
+    font-weight: 300;
+    color: #000;
+    line-height: 32px;
+    margin-bottom: 16px;
+}
+
+
+footer .wrapper .content {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 30px;
+    margin-bottom: 0;
+    color: #242525;
+}
+
+footer .owner {
+    font-size: 48px;
+    font-weight: 500;
+    font-family: 'Brittany';
+    width: 100%;
+    text-align: end;
+}
+
+footer .owner img {
+    width: 80px;
+    margin-bottom: 24px;
+    margin-left: -24px;
+    height: auto;
+    display: inline;
+}
+
+.copyright {
+    width: 100%;
+    text-align: right;
+    color: #c1c1c1;
+    padding-right: 16px;
+    font-size: 8px;
+    font-weight: 200;
+}
+
+.copyright a {
+    color: #888;
+    text-decoration: none;
+}
+
+main .event .event-name {
+    line-height: 32px;
+    padding-top: 2px;
+    padding-left: 8px;
+}
+
+@media (max-width: 768px) {
+    header nav .navbar-collapse {
+        background-color: #fff;
+    }
+
+    header .title .number {
+        font-size: 42px;
+        line-height: 60px;
+    }
+
+    header .title .first-text {
+        font-size: 16px;
+        padding: 0;
+    }
+
+    header .title .second-text {
+        height: 100px;
+        font-size: 16px;
+    }
+
+    header .frontground .wedding-title {
+        font-size: 72px;
+        left: 20px;
+        top: calc(100% - 56px);
+    }
+
+    header .frontground .wedding-member {
+        top: calc(100% + 48px);
+        left: 20px;
+        font-size: 14px;
+        letter-spacing: 0;
+    }
+
+    main .event .event-item {
+        width: calc(100% - 24px);
+        margin-bottom: 20px;
+        padding-left: 24px;
+        padding-right: 24px;
+        max-width: 320px;
+    }
+
+    main .event .event-item img {
+        max-width: calc(100% - 148px);
+    }
+
+    main .event .event-item .title {
+        font-size: 14px;
+    }
+
+    main .event .event-item .title::after {
+        width: 80px;
+        margin: 0 0 10px;
+    }
+
+    main .event .event-item .place {
+        max-width: 60%;
+    }
+
+    main .album .album-head h4 {
+        padding: 0;
+        padding-top: 4px;
+        font-size: 28px;
+        max-width: 60px;
+        margin-left: auto;
+    }
+
+    main .event .heading, 
+    main .wish-box .wish-box__title, 
+    main .celebration-box .heading {
+        font-size: 42px;
+        width: 100%;
+        text-align: center;
+    }
+
+    main .confirm-box button, 
+    main .wish-box button {
+        font-size: 20px;
+    }
+
+    footer .thankyou {
+        font-size: 80px;
+        margin-top: 140px;
+    }
+
+    footer .wrapper .title {
+        font-size: 14px;
+    }
+
+    footer .wrapper .content {
+        font-size: 14px;
+    }
+
+    footer .owner {
+        font-size: 24px;
+    }
+
+    footer .owner img {
+        width: 48px;
+        margin-left: -12px;
+        margin-bottom: 16px;
+    }
+
+    main .calendar-title {
+        margin-top: 180px;
+        margin-bottom: 24px;
+        font-size: 42px;
+    }
+
+    header .title {
+        margin-top: 40px;
+    }
+
+    main .countdown .time span {
+        font-size: 40px;
+    }
+
+    main .countdown .label {
+        font-size: 12px;
+    }
+
+    main .event .heading {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .calendar .header_title {
+        font-size: 16px;
+    }
+
+    .calendar .days-of-week .day-name {
+        font-size: 12px;
+    }
+
+    header nav {
+        height: 42px;
+    }
+
+    header nav .nav-box {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    main .wish-box .wish-box__title {
+        margin-top: 0;
+    }
+
+    main .celebration-box .heading {
+        margin-top: 40px;
+    }
+
+    main .celebration-box .qr-code {
+        padding: 0 32px;
+    }
+
+    main .wish-box .wish-content {
+        max-width: calc(100% - 48px);
+    }
+
+    main .wish-box input,
+    main .confirm-box input {
+        padding: 10px 16px;
+    }
+}

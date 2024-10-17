@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ - Book Store</title>
+
+    <link rel="shortcut icon" href="./assets/images/favi.png" type="image/x-icon">
+    <!-- Google Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap">
+    <!-- CSS icon from Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- CSS Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- CSS custom -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/home.css">
+    <link rel="stylesheet" href="assets/css/notify.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header navbar navbar-expand-md py-4">
+        <div class="container">
+            <a href="index.html" class="fs-3 fw-bold">BookStore.</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#header-navbar" aria-controls="header-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="header-navbar">
+                <ul class="custom-navbar-link navbar-nav ms-auto mt-4 mt-md-0">
+                    <li class="mt-3 mt-md-0 me-2 me-lg-4 active"><a class="p-2" href="index.html">Home</a></li>
+                    <li class="mt-3 mt-md-0 me-2 me-lg-4"><a class="p-2" href="shop.html">Shop</a></li>
+                    <li class="mt-3 mt-md-0 me-2 me-lg-4"><a class="p-2" href="blog.html">Blogs</a></li>
+                    <li class="mt-3 mt-md-0 me-2 me-lg-4"><a class="p-2" href="about.html">About us</a></li>
+                    <li class="mt-3 mt-md-0 me-2 me-lg-4"><a class="p-2" href="">Contact us</a></li>
+                </ul>
+
+                <ul class="navbar-nav mt-2 mt-md-0 fs-5">
+                    <li class="mt-4 mt-md-0 mx-md-2 mx-lg-4">
+                        <a class="p-2 d-block h-100 position-relative" href="cart.html">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span class="quantity-cart fs-6">0</span>
+                        </a>
+                    </li>
+                    <li class="mt-3 mt-md-0 ms-1">
+                        <div class="user" id="user-controls">
+                            <div id="user-button" class="user__button w-100 h-100">
+                            	<img class="user__button-avatar" src="assets/images/post-1.jpg" alt="avatar">
+                            	<i class="user__button-icon fa-solid fa-user text-light"></i>
+                            </div>
+                                
+                            <div class="user__nav" id="user-nav">
+                                <a href="">Tài khoản</a>
+                                <a href="/bookstore/cart">Giỏ hàng</a>
+                                <a href="">Đơn hàng</a>
+                                <a href="">Trợ giúp</a>
+                                
+                                <button id="logout" class="logout">Đăng xuất</button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <div class="header-margin"></div>
+
+    <!-- Pop up to show notifications -->
+    <div id="notify">
+        <div class="d-flex align-items-center">
+            <div class="notify-status d-flex justify-content-center align-items-center px-3 px-md-4 fs-1">
+                <i class="fa-solid fa-circle-check"></i>
+                <i class="fa-solid fa-bug"></i>
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <i class="fa-regular fa-comment-dots"></i>
+            </div>
+    
+            <div class="notify-content">
+                <div id="notify-title">This is title</div>
+                <div id="notify-message">This is a example message.</div>
+            </div>
+             
+            <div id="notify-close-button" class="justify-content-center align-items-center px-2 px-md-3 fs-3">
+                <i class="w-75 p-3 text-secondary fa-solid fa-xmark"></i>
+            </div>
+        </div>
+
+        <div class="w-100 py-3 pe-4 justify-content-end notify-response" id="notify-response">
+            <button class="ok me-2 fw-bold" id="ok">Ok</button>
+            <button class="cancell fw-bold" id="cancell">Hủy</button>
+        </div>
+    </div>
+    
+    <!-- Loading animation -->
+    <div id="popup-loader">
+    	<div class="circle"></div>
+    </div>
+    
+    <!-- Pop up form input -->
+    <div class="popup" id="popup">
+    	<div class="popup-wrapper">
+    		<button id="popup-close-button" ><span class="fa-solid fa-xmark"></span></button>
+    		<div id="popup-content" class="popup-content"></div>  	
+    	</div>
+    </div>
+
+    <!-- Slider -->
+    <div class="slider">
+        <div class="container">
+            <div id="carouselExample" class="carousel slide touch" data-bs-ride="carousel" data-bs-interval="5000" data-bs-touch="true">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row justify-content-between align-items-center">
+                            <div class="col-12 col-lg-5 ps-md-4">
+                                <h1 class="mb-4 fw-bold fs-2 text-light">Truyện tranh hấp dẫn</h1>
+                                <p class="mb-4 slide-caption opacity-50 fs-6 text-light">
+                                    Nhập vai vào thế giới phiêu lưu đầy màu sắc và hài hước với những trang truyện tranh tuyệt vời! 
+                                	Khám phá những câu chuyện đầy phép thuật và nhân vật đầy cá tính, 
+                                	sẵn sàng chờ đợi bạn trong những trang sách tranh tuyệt vời!
+                                </p>
+                                <a href="" class="btn rounded-5 px-4 py-2 fs-5 fw-medium text-light explore">Xem ngay</a>
+                            </div>
+
+                            <div class="col-sm-12 col-lg-7 pt-5 pt-lg-0 slide-img">
+                                <img src="./assets/images/comic.png" alt="slide image">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="row justify-content-between align-items-center">
+                            <div class="col-12 col-lg-5 ps-md-4">
+                                <h1 class="mb-4 fw-bold fs-2 text-light">Khám phá khoa học</h1>
+                                <p class="mb-4 slide-caption opacity-50 fs-6 text-light">
+                                    Kích thích sự tò mò và khám phá với cuốn sách khoa học đầy màu sắc,
+                                	mang đến những hiểu biết mới mẻ và hấp dẫn cho các trẻ nhỏ!
+                                </p>
+                                <a href="" class="btn rounded-5 px-4 py-2 fs-5 fw-medium text-light explore">Xem ngay</a>
+                            </div>
+
+                            <div class="col-sm-12 col-lg-7 pt-5 pt-lg-0 slide-img">
+                                <img src="./assets/images/science.png" alt="slide image">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="row justify-content-between align-items-center">
+                            <div class="col-12 col-lg-5 ps-md-4">
+                                <h1 class="mb-4 fw-bold fs-2 text-light">Cùng nhau vào bếp</h1>
+                                <p class="mb-4 slide-caption opacity-50 fs-6 text-light">
+                                    Khám phá hương vị thế giới và học cách trở thành đầu bếp tài ba với những công thức đơn giản
+                                    và ngon miệng từ cuốn sách nấu ăn độc đáo này! 
+                                    Từ món ăn truyền thống đến những món mới lạ, tất cả đều sẽ được tiết lộ bí mật trong từng trang sách, 
+                                    mang lại cho bạn trải nghiệm ẩm thực tuyệt vời nhất.
+                                </p>
+                                <a href="" class="btn rounded-5 px-4 py-2 fs-5 fw-medium text-light explore">Xem ngay</a>
+                            </div>
+
+                            <div class="col-sm-12 col-lg-7 pt-5 pt-lg-0 slide-img">
+                                <img src="./assets/images/cooking.png" alt="slide image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <button class="d-none d-md-block carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                    <i class="fa-solid fa-angle-left"></i>
+                </button>
+                
+                <button class="d-none d-md-block carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                    <i class="fa-solid fa-angle-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Season trending -->
+    <div class="season-trending">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-lg-7 mb-5 mb-lg-0">
+                    <div class="row align-items-start img-wrapper">
+                        <div class="col-8"><img class="img-1 rounded-4" src="assets/images/img-grid-1.jpg" alt="trending-img"></div>
+                        <div class="col-4 position-relative">
+                            <img class="img-2 rounded-4" src="assets/images/img-grid-2.jpg" alt="trending-img">
+                            <img class="img-3 rounded-4" src="assets/images/img-grid-3.jpg" alt="trending-img">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-5 pt-5 pt-lg-0 ps-lg-5 mt-5 mt-lg-0">
+                    <h2 class="mb-4 fs-2 text-dark">Xu hướng sách mùa này</h2>
+                    <p>Donec facilisis quam ut purus rutrum lobortis. Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique. Pellentesque habitant morbi tristique senectus et netus et malesuada</p>
+
+                    <ul class="list-unstyled my-4">
+                        <li>Donec vitae odio quis nisl dapibus malesuada</li>
+                        <li>Donec vitae odio quis nisl dapibus malesuada</li>
+                        <li>Donec vitae odio quis nisl dapibus malesuada</li>
+                        <li>Donec vitae odio quis nisl dapibus malesuada</li>
+                    </ul>
+
+                    <a herf="" class="btn btn-dark mt-4 px-4 py-2 fs-5 fw-medium rounded-5">Xem ngay</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recent blog -->
+    <div class="blog">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-md-6">
+                    <h2 class="fs-2 text-dark">Blog mới</h2>
+                </div>
+                <div class="col-md-6 pt-4 text-start text-md-end">
+                    <a href="#" class="fs-6 text-decoration-none text-dark">Xem tất cả</a>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
+                    <div class="post-entry">
+                        <a href="#" class="post-thumbnail"><img src="assets/images/post-1.jpg" alt="Image" class="img-fluid rounded-4"></a>
+                        <div class="mt-4">
+                            <h3><a class="text-decoration-none text-dark fs-4" href="#">First Time Home Owner Ideas</a></h3>
+                            <div class="meta">
+                                <span>by <a href="#">Kristin Watson</a></span> <span>on <a href="#">Dec 19, 2021</a></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
+                    <div class="post-entry">
+                        <a href="#" class="post-thumbnail"><img src="assets/images/post-2.jpg" alt="Image" class="img-fluid rounded-4"></a>
+                        <div class="mt-4">
+                            <h3><a class="text-decoration-none text-dark fs-4" href="#">How To Keep Your Furniture Clean</a></h3>
+                            <div class="meta">
+                                <span>by <a href="#">Robert Fox</a></span> <span>on <a href="#">Dec 15, 2021</a></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
+                    <div class="post-entry">
+                        <a href="#" class="post-thumbnail"><img src="assets/images/post-3.jpg" alt="Image" class="img-fluid rounded-4"></a>
+                        <div class="mt-4">
+                            <h3><a class="text-decoration-none text-dark fs-4" href="#">Small Space Furniture Apartment Ideas</a></h3>
+                            <div class="meta">
+                                <span>by <a href="#">Kristin Watson</a></span> <span>on <a href="#">Dec 12, 2021</a></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h3 class="mb-4 fs-4 opacity-75">
+                        <i class="fa-regular fa-envelope me-2 opacity-50"></i>
+                        <span class="fw-semibold">Đăng ký nhận tin tức và khuyến mãi</span>
+                    </h3>
+
+                    <form action="" class="row">
+                        <div class="col-12 col-sm-8 col-md-5 mb-3 mb-md-0"><input class="w-100 w-sm-75 w-md-auto" type="text" name="name" id="" placeholder="Nhập tên"></div>
+                        <div class="col-12 col-sm-8 col-md-5 mb-3 mb-md-0"><input class="w-100 w-sm-75 w-md-auto" type="email" name="email" id="" placeholder="Nhập email"></div>
+                        <div class="col-12 col-sm-8 col-md-auto">
+                            <button class="w-100 w-md-auto" type="button">
+                                <span class="fa fa-paper-plane"></span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="row pt-5 pb-2">
+                <a href="index.html" class="footer__logo fs-2 fw-bold">BookStore.</a>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <p class="fs-6 fw-medium lh-lg" style="text-align: justify;">
+                        Cảm ơn bạn đã ghé thăm cửa hàng của chúng tôi! 
+                    	Chúng tôi hy vọng bạn đã tìm thấy những cuốn sách mà bạn đang tìm kiếm. 
+                    	Đừng ngần ngại liên hệ với chúng tôi nếu bạn có bất kỳ câu hỏi nào hoặc cần hỗ trợ. 
+                    	Chúng tôi luôn sẵn lòng giúp đỡ. Chúc bạn có những trải nghiệm đọc sách thú vị và bổ ích!
+                    </p>
+                    
+                    <ul class="footer__social-link my-5">
+                        <li class="d-inline-block">
+                            <a href=""><span class="fa-brands fa-facebook-f fs-5"></span></a>
+                        </li>
+                        <li class="d-inline-block ms-2">
+                            <a href=""><span class="fa-brands fa-github fs-5"></span></a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-0 col-lg-4"></div>
+
+                        <div class="col-6 col-md-4">
+                            <ul class="lh-lg">
+                                <li><a href="">Về chúng tôi</a></li>
+                                <li><a href="">Dịch vụ</a></li>
+                                <li><a href="">Blog</a></li>
+                                <li><a href="">Liên hệ</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-6 col-md-4">
+                            <ul class="lh-lg">
+                                <li><a href="">Hỗ trợ</a></li>
+                                <li><a href="">Live chat</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row py-5 pt-lg-0">
+                <div class="col-lg-6 col-xl-8">
+                    <p class="mb-2 text-start">
+                        Copyright &copy; 2024. All Rights Reserved &mdash; 
+                        Created by <a href="https://github.com/dcthoai/book-shop-template">dcthoai</a>
+                        based on the design of <a href="https://themewagon.github.io/furni">ThemeWagon.</a>
+                    </p>
+                </div>
+
+                <div class="col-lg-6 col-xl-4 pt-4 pt-lg-0 text-center text-lg-end">
+                    <ul class="d-inline-flex ms-auto flex-wrap">
+                        <li class="me-4"><a href="">Điều khoản &amp; Điều kiện</a></li>
+                        <li><a href="">Chính sách bảo mật</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+    <script src="assets/js/notify.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/validator.js"></script>
+    <script src="assets/js/authenticate.js"></script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+/* Custom font */
+@font-face {
+    font-family: Gilroy-Black;
+    src: url('../font/SVN-Gilroy-Black.otf') format('opentype');
+}
+
+@font-face {
+    font-family: Gilroy-Black-Italic;
+    src: url('../font/SVN-Gilroy-Black-Italic.otf') format('opentype');
+}
+
+@font-face {
+    font-family: Gilroy-Bold;
+    src: url('../font/SVN-Gilroy-Bold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: Gilroy-Bold-Italic;
+    src: url('../font/SVN-Gilroy-Bold-Italic.otf') format('opentype');
+}
+
+@font-face {
+    font-family: Gilroy-Heavy;
+    src: url('../font/SVN-Gilroy-Heavy.otf') format('opentype');
+}
+
+@font-face {
+    font-family: Gilroy-Heavy-Italic;
+    src: url('../font/SVN-Gilroy-Heavy-Italic.otf') format('opentype');
+}
+
+@font-face {
+    font-family: Gilroy-Italic;
+    src: url('../font/SVN-Gilroy-Italic.otf') format('opentype');
+}
+
+@font-face {
+    font-family: Gilroy-Light-Italic;
+    src: url('../font/SVN-Gilroy-Light-Italic.otf') format('opentype');
+}
+
+@font-face {
+    font-family: Gilroy-Light;
+    src: url('../font/SVN-Gilroy-Light.otf') format('opentype');
+}
+
+@font-face {
+    font-family: Gilroy-Medium-Italic;
+    src: url('../font/SVN-Gilroy-Medium-Italic.otf') format('opentype');
+}
+
+@font-face {
+    font-family: Gilroy-Medium;
+    src: url('../font/SVN-Gilroy-Medium.otf') format('opentype');
+}
+
+@font-face {
+    font-family: Gilroy-Regular;
+    src: url('../font/SVN-Gilroy-Regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: Gilroy-SemiBold-Italic;
+    src: url('../font/SVN-Gilroy-SemiBold-Italic.otf') format('opentype');
+}
+
+@font-face {
+    font-family: Gilroy-SemiBold;
+    src: url('../font/SVN-Gilroy-SemiBold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: Gilroy-Thin-Italic;
+    src: url('../font/SVN-Gilroy-Thin-Italic.otf') format('opentype');
+}
+
+@font-face {
+    font-family: Gilroy-Thin;
+    src: url('../font/SVN-Gilroy-Thin.otf') format('opentype');
+}
+
+@font-face {
+    font-family: Gilroy-XBold-Italic;
+    src: url('../font/SVN-Gilroy-XBold-Italic.otf') format('opentype');
+}
+
+@font-face {
+    font-family: Gilroy-XBold;
+    src: url('../font/SVN-Gilroy-XBold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: Gilroy-XLight-Italic;
+    src: url('../font/SVN-Gilroy-Xlight-Italic.otf') format('opentype');
+}
+
+@font-face {
+    font-family: Gilroy-XLight;
+    src: url('../font/SVN-Gilroy-Xlight.otf') format('opentype');
+}

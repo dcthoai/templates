@@ -1,0 +1,298 @@
+
+/* Project */
+.project.wrapper {
+    margin-top: 6.875rem;
+}
+
+.project .img-1 {
+    aspect-ratio: 173/100;
+}
+
+.project .img-2 {
+    aspect-ratio: 1/1;
+}
+
+.project .img-3 {
+    height: 100%;
+}
+
+.project .project__sub-heading {
+    margin-top: 1.5rem;
+    font-family: 'Gilroy-SemiBold';
+    font-size: var(--fs-normal);
+    line-height: 1.25rem;
+    color: var(--main-black-color-100);
+    display: flex;
+    align-items: center;
+}
+
+.project .project__sub-heading .line {
+    display: inline-block;
+    width: 6.25rem;
+    height: 0.0625rem;
+    background-color: var(--main-black-color-100);
+    margin: 0 0.5rem;
+    margin-top: 0.375rem;
+}
+
+.project .project__des {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.project .project__des .project__des-title {
+    font-family: 'Gilroy-SemiBold';
+    font-size: var(--fs-xsmall);
+    line-height: 1.125rem;
+    color: var(--main-black-color-100);
+}
+
+.project .project__des .project__des-text {
+    font-family: 'Gilroy-Regular';
+    font-size: var(--fs-xsmall);
+    line-height: 1;
+    color: var(--sub-heading-color);
+}
+
+.project .project__des .project__des-text.project__des-top {
+    padding: 0 0.9375rem;
+}
+
+/* Project info */
+.project-info .project-info__heading {
+    padding: 0.5rem;
+    font-family: 'Gilroy-Bold';
+    font-size: var(--fs-xbold);
+    line-height: 3.5625rem;
+    color: var(--main-black-color-100);
+}
+
+.project-info .project__info-customer,
+.project-info .project__info-category,
+.project-info .project__info-date,
+.project-info .project__info-more {
+    padding: 0.5rem;
+}
+
+.project-info .project__info-customer,
+.project-info .project__info-date {
+    margin-bottom: 1.5rem;
+}
+
+.project-info .title {
+    font-family: 'Gilroy-Regular';
+    font-size: var(--fs-small);
+    line-height: 1.5rem;
+    color: var(--main-black-color-100);
+    margin-bottom: 0.5rem;
+}
+
+.project-info .name {
+    font-family: 'Gilroy-SemiBold';
+    font-size: var(--fs-bold);
+    line-height: 2.25rem;
+    color: var(--main-black-color-100);
+}
+
+.project-info .project-link,
+.project-info .project-link i {
+    transition: all ease-in-out 0.3s;
+}
+
+.project-info .project-link i.fa-arrow-right-long {
+    color: var(--main-black-color-100);
+    opacity: 0;
+    font-size: var(--fs-normal);
+    line-height: 1.25rem;
+    margin-left: 0.5rem;
+}
+
+.project-info .project-link:hover {
+    color: var(--main-yellow-color-100);
+}
+
+.project-info .project-link:hover i.fa-arrow-right-long {
+    opacity: 1;
+    color: var(--main-yellow-color-100);
+}
+
+/* Suggestion project */
+.suggestion {
+    margin-bottom: 8.75rem;
+}
+
+.suggestion .suggestion__header {
+    margin-bottom: 1.5rem;
+    padding: 0.5rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.suggestion .suggestion__header .suggestion__header-heading {
+    font-family: 'Gilroy-SemiBold';
+    font-size: var(--fs-bold);
+    line-height: 2rem;
+    color: var(--main-black-color-100);
+}
+
+.suggestion .suggestion__header .suggestion__header-control button {
+    padding: 0.625rem 1rem;
+    line-height: 0;
+    border: none;
+    background-color: transparent;
+}
+
+.suggestion .suggestion__header .suggestion__header-control button.button-next {
+    padding-right: 0;
+}
+
+.suggestion .suggestion__header .suggestion__header-control button svg {
+    height: 0.8125rem;
+}
+
+.suggestion .suggestion__header .suggestion__header-control button path,
+.suggestion .suggestion__header .suggestion__header-control button rect {
+    fill: var(--main-black-color-100);
+    transition: all ease-in-out 0.3s;
+}
+
+.suggestion .suggestion__header .suggestion__header-control button:hover path,
+.suggestion .suggestion__header .suggestion__header-control button:hover rect {
+    fill: var(--main-yellow-color-100);
+}
+
+/* Project suggest */
+.suggestion .suggestion__content .project .project__img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+}
+
+.suggestion .suggestion__content .project .project__img img {
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    transition: all ease-in-out 0.35s;
+}
+
+.suggestion .suggestion__content .project:hover img {
+    transform: scale(1.05);
+}
+
+.suggestion .suggestion__content .project .project__des {
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.suggestion .suggestion__content .project .project__des-text {
+    flex: 1;
+    font-family: 'Gilroy-SemiBold';
+    font-size: var(--fs-bold);
+    line-height: 2.25rem;
+    color: var(--main-black-color-100);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.suggestion .suggestion__content .project:hover .project__des-icon {
+    opacity: 1;
+}
+
+.suggestion .suggestion__content .project .project__des-icon {
+    align-self: flex-end;
+    height: 2.25rem;
+    padding: 0.25rem 0;
+    opacity: 0;
+    transition: all ease-in-out 0.35s;
+}
+
+.suggestion .suggestion__content .project .arrow-right-translate {
+    height: 100%;
+}
+
+.suggestion .suggestion__content .project .arrow-right-translate .arrow-right-translate__line {
+    background-color: var(--main-black-color-100);
+}
+
+.suggestion .suggestion__content .project .arrow-right-translate .arrow-right-translate__right {
+    color: var(--main-black-color-100);
+}
+
+/* Responive */
+@media (min-width: 576px) {
+    
+}
+
+@media (min-width: 768px) {
+    .project.wrapper {
+        margin-top: 15rem;
+    }
+
+    .project .project__sub-heading {
+        font-size: var(--fs-bold);
+        line-height: 2.25rem;
+    }
+    
+    .project .project__sub-heading .line {
+        width: 12.5rem;
+    }
+
+    .project .project__des {
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+    }
+
+    .project .project__des .project__des-title {
+        margin-bottom: 1.5rem;
+        font-family: 'Gilroy-SemiBold';
+        font-size: var(--fs-bold);
+        line-height: 2.25rem;
+    }
+    
+    .project .project__des .project__des-text {
+        font-family: 'Gilroy-Regular';
+        font-size: var(--fs-medium);
+        line-height: 1.875rem;
+    }
+
+    .project .project__des .project__des-text.project__des-top {
+        padding: 0.9375rem;
+    }
+
+    .suggestion .suggestion__header {
+        padding-left: 0.5rem;
+    }
+
+    .suggestion .suggestion__header .suggestion__header-heading {
+        font-family: 'Gilroy-Bold';
+        font-size: var(--fs-xbold);
+        line-height: 3.5625rem;
+    }
+
+    .suggestion .suggestion__header .suggestion__header-control button.button-next {
+        padding-right: 1rem;
+    }
+
+    .suggestion .suggestion__content .project .project__des {
+        padding: 0 0.5rem;
+    }
+}
+
+@media (min-width: 900px) {
+    
+}
+
+@media (min-width: 1200px) {
+    
+}
+
+@media (min-width: 1778px) {
+    
+}
